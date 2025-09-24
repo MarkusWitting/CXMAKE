@@ -28,23 +28,30 @@ class VARDCL:
         self.name = name
         self.value = value
 
-PDEF = PARAMDEF
+class FLAGDEF:
+    def __init__(self, name, description=None):
+        self.name = name
+        self.description = description
 
+
+PDEF = PARAMDEF
 ###=------ DEFINITIONS ------=###
 FUNCS = [
-    FUNCDEF("CXXMAKE_Version",     [PDEF("Version", 0)]),
+    FUNCDEF("CXMAKE_Version",      [PDEF("Version", 0)]),
 
     FUNCDEF("Project",             [PDEF("Name", 0), PDEF("Version", 1, True), PDEF("Language", 2)]),
 
     FUNCDEF("set",                 [PDEF("varname", 0), PDEF("value", 1)]),
 
-    FUNCDEF("add_executable",      [PDEF("name", 0), PDEF("srcs", 1)]),
+    FUNCDEF("dir"   ,              [PDEF("dir", 0), PDEF("RECURSIVE", 0, True, "0"), PDEF("filetype", 1, True, None)]),
 
-    FUNCDEF("add_library",         [PDEF("name", 0), PDEF("srcs", 1)]),
+    FUNCDEF("add_executable",      [PDEF("name", 0), PDEF("srcs", 1)]),
 
     FUNCDEF("include_directories", [PDEF("dirs", 0)]),
 
-    FUNCDEF("link_libraries",      [PDEF("libs", 0)]),
-
     FUNCDEF("add_subdirectory",    [PDEF("dir", 0)]),
+]
+
+FLAGS = [
+
 ]
