@@ -28,12 +28,18 @@ class VARDCL:
         self.name = name
         self.value = value
 
+<<<<<<< Updated upstream
 class FLAGDEF:
     def __init__(self, name, description=None):
         self.name = name
         self.description = description
 
 
+=======
+
+
+
+>>>>>>> Stashed changes
 PDEF = PARAMDEF
 ###=------ DEFINITIONS ------=###
 FUNCS = [
@@ -41,17 +47,28 @@ FUNCS = [
 
     FUNCDEF("Project",             [PDEF("Name", 0), PDEF("Version", 1, True), PDEF("Language", 2)]),
 
+    FUNCDEF("Build",               [PDEF("ReleaseMode", 0)]),
+
     FUNCDEF("set",                 [PDEF("varname", 0), PDEF("value", 1)]),
 
     FUNCDEF("dir"   ,              [PDEF("dir", 0), PDEF("RECURSIVE", 0, True, "0"), PDEF("filetype", 1, True, None)]),
+<<<<<<< Updated upstream
 
     FUNCDEF("add_executable",      [PDEF("name", 0), PDEF("srcs", 1)]),
 
+=======
+
+    FUNCDEF("add_executable",      [PDEF("name", 0), PDEF("srcs", 1)]),
+
+>>>>>>> Stashed changes
     FUNCDEF("include_directories", [PDEF("dirs", 0)]),
 
     FUNCDEF("add_subdirectory",    [PDEF("dir", 0)]),
 ]
+<<<<<<< Updated upstream
 
 FLAGS = [
 
 ]
+=======
+>>>>>>> Stashed changes

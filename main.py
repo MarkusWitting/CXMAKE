@@ -24,19 +24,24 @@ def GetFuncs(lines):
         if match:
             func_name = match.group(1)
             params = match.group(2).split(',')
-            params = [param.strip() for param in params].split()
+            params = [param.strip().split() for param in params]
 
             temp_funcs.append(fd.FUNC(func_name, params))
     return temp_funcs
 
 ##===--------------------------------===##
 def CheckFunc(func: fd.FUNC):
-    if func.name in fd.FUNCS:
-        for i in param_lst:
-            if i not in self.param_defs:
-                raise ValueError(f"Parameter {i} not valid for function {name}")
-            else:
-                self.params.append(i)
+    for func_def in fd.FUNCDEFS:
+        if func.name == func_def.name:
+            for i in func.params:
+                if i not in func_def.param_defs:
+                    raise ValueError(f"Parameter {i} not valid for function {name}")
+                else:
+                    param_list.params.append(i)
+
+
+
+
 ##===--------------------------------===##
 def GetProjectInfo(lines):
     for ln in lines:
@@ -46,8 +51,8 @@ def GetProjectInfo(lines):
 def main():
     lines = ParseFile()
     
-    funcs = GetFuncs(lines)
-    print(funcs)
+    #funcs = GetFuncs(lines)
+    print(CheckFunc(fd.FUNC("Project", ["MyApp", "1.0", "C++"])))
 
 ##===--------------------------------===##
 if __name__ == "__main__":
