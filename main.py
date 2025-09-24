@@ -30,15 +30,7 @@ def GetFuncs(lines):
     return temp_funcs
 
 ##===--------------------------------===##
-def CheckFunc(func: fd.FUNC):
-    for func_def in fd.FUNCDEFS:
-        if func.name == func_def.name:
-            for i in func.params:
-                if i not in func_def.param_defs:
-                    raise ValueError(f"Parameter {i} not valid for function {name}")
-                else:
-                    param_list.params.append(i)
-
+# Add CheckFunc Function
 
 
 

@@ -1,7 +1,7 @@
 CXMAKE_Version(0.1) // Version of CXMAKE // CXM will use specified version to create compile command
 Project(MyProject 1.0 CXX) // Project info, version, language used (affects compiler used)
 
-Build(Debug)
+//Build(Debug)
 
 
 // dir returns list of files in "dir" within sub-directory limit (0); of file type (.cpp) 
