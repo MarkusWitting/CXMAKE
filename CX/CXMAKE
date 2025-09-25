@@ -1,7 +1,0 @@
-CXMAKE_Version(0.1) // Version of CXMAKE // CXM will use specified version to create compile command
-Project(MyProject 1.0 CXX) // Project info, version, language used (affects compiler used)
-
-// dir returns list of file paths within recursion limit (1); of file type (.cpp) 
-set(SRC dir("src" 1 .cpp)) //
-
-
